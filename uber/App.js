@@ -3,21 +3,21 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import { Provider } from "react-redux";
+import HomeScreen from './screens/HomeScreen';
 import { store } from './store';
 
 // 1. Setup Redux
 export default function App() {
   return (
     <Provider store={store}>
-      <View style={styles.container}>
-        <Text>Let build Uber</Text>
-        <StatusBar style="auto" />
-      </View>
+      <HomeScreen/>
     </Provider>
   );
 }
 
 const styles = StyleSheet.create({
+
+  //styling for the main container
   container: {
     flex: 1,
     backgroundColor: '#fff',
