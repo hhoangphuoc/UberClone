@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { FlatList, StyleSheet, Text, TouchableOpacity,View,Image} from 'react-native';
+import { Icon } from 'react-native-elements';
 import tw from 'tailwind-react-native-classnames';
-
 
 const data = [
     {
@@ -29,13 +29,19 @@ const NavOptions = () => {
             keyExtractor={(item) => item.id}
             renderItem={({ item }) => (
                 //make the item touchable, it will be response when we clicked
-                <TouchableOpacity style={tw`p-2 pl-6 pb-8 pt-4 bg-gray-200 m-2 w-52 h-48 rounded-md`}>
+ 
+                <TouchableOpacity style={tw`p-2 pl-4 pb-8 bg-gray-200 m-2 w-48 h-2/6
+                 rounded-md`}>
                     <View>
                         <Image
-                        style= {{width:120, height:120, marginLeft:50,resizeMode: "contain"}}
+                        style= {{width:110, height:110, marginLeft:55,resizeMode: "contain"}}
                             source={{uri: item.image }}
                         />
-                        <Text style={tw`mt-2 text-lg font-semibold`}>{item.title}</Text>
+                        <Text style={tw`mt-2 text-lg font-bold`}>{item.title}</Text>
+                        <Icon
+                        style={tw`p-2 bg-black rounded-full w-10 mt-4 mb-10`}
+                            name="arrowright" color="white" type="antdesign"
+                        />
                     </View>
                 </TouchableOpacity>
              ) } 
