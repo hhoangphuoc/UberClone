@@ -6,11 +6,21 @@ import { Provider } from "react-redux";
 import HomeScreen from './screens/HomeScreen';
 import { store } from './store';
 
-// 1. Setup Redux
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+
+import 'react-native-gesture-handler'; //using for swipe back and forth inside screen (by hand)
+
+
+import { NavigationContainer } from '@react-navigation/native'; //another wrapper container for navigation of entire app
+
 export default function App() {
   return (
     <Provider store={store}>
-      <HomeScreen/>
+      <NavigationContainer>
+        <SafeAreaProvider>
+          <HomeScreen/> 
+        </SafeAreaProvider>
+      </NavigationContainer>
     </Provider>
   );
 }
